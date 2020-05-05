@@ -1,3 +1,20 @@
-<p>
-  customer-list works!
-</p>
+<table class="table table-sm">
+  <thead>
+    <th>Full Name</th>
+    <th>Email</th>
+    <th>Mobile</th>
+    <th>Location</th>
+  </thead>
+  <ng-container *ngFor="let customer of customerArray">
+    <tr class="table-dark">
+      <td>{{customer.fullName}}</td>
+      <td>{{customer.email}}</td>
+      <td>{{customer.mobile}}</td>
+      <td>{{customer.location}}</td>
+      <td>
+        <button class="btn btn-outline-info" (click)="customerService.populateForm(customer)">Edit</button>
+        <button class="btn btn-outline-danger">Delete</button>
+      </td>
+    </tr>
+  </ng-container>
+</table>
