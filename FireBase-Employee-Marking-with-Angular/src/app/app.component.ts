@@ -9,18 +9,18 @@ import { observable } from 'rxjs';
 })
 export class AppComponent {
 
-courses:any[];
+// courses:any[];
 
-  constructor(db: AngularFireDatabase){
+//   constructor(db: AngularFireDatabase){
     
-    db.list('/courses')
-    .valueChanges()
-    .subscribe(courses => {
-      this.courses=courses;
-      console.log(this.courses)//should give you the array of percentage. 
-    });
+//     db.list('/courses')
+//     .valueChanges()
+//     .subscribe(courses => {
+//       this.courses=courses;
+//       console.log(this.courses)//should give you the array of percentage. 
+//     });
     
 
   }
 
-}
+

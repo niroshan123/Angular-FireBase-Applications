@@ -8,7 +8,7 @@
   <label>Full Name</label>
   <input formControlName="fullName" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.fullName.errors}">
 <div class="invalid-feedback" *ngIf="submitted && formControls.fullName.errors">
-  This Field is required
+  <label *ngIf="formControls.fullName.errors">Name is Required</label>
 </div>
 
 </div>
@@ -17,7 +17,8 @@
  <label>Email</label>
  <input formControlName="email" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.email.errors}">
  <div class="invalid-feedback" *ngIf="submitted && formControls.email.errors">
-  This Field is required
+  <label *ngIf="formControls.email.errors.required">Email is Required</label>
+  <label *ngIf="formControls.email.errors.email">Email is Not Valid</label>
 </div>
 </div>
 
@@ -25,7 +26,8 @@
   <label>Mobile</label>
   <input formControlName="mobile" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.mobile.errors}">
   <div class="invalid-feedback" *ngIf="submitted && formControls.mobile.errors">
-    This Field is required
+    <label *ngIf="formControls.mobile.errors.required">Mobile is Required</label>
+    <label *ngIf="formControls.mobile.errors.minlength">Atleast 8 numbers</label>
   </div>
 </div>
 
@@ -43,6 +45,7 @@
 
 </form>
 
+<div class="alert alert-info" *ngIf="successMsg">Successfully Sumbitted</div>
     
   </div>
   <div class="col-md-7">
