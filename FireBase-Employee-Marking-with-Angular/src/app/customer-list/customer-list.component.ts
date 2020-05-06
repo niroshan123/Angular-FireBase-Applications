@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerService } from '../shared/customer.service';
 
+
 @Component({
   selector: 'app-customer-list',
   templateUrl: './customer-list.component.html',
@@ -9,6 +10,9 @@ import { CustomerService } from '../shared/customer.service';
 export class CustomerListComponent implements OnInit {
 
   customerArray=[];
+  showDeleteMsg:boolean;
+  searchText:String="";
+  
 
   constructor(private customerService:CustomerService) { }
 
@@ -24,6 +28,16 @@ export class CustomerListComponent implements OnInit {
     });
   }
 
+  onDelete($key){
+if(confirm('Are you sure?')){
+  this.customerService.deleteCustomer($key);
+  this.showDeleteMsg=true;
+  setTimeout(() => this.showDeleteMsg=false, 3000);
+}
+  }
 
+  filterCondition(customer) {
+    return customer.fullName.toLowerCase().indexOf(this.searchText.toLowerCase()) != -1;
+  }
 
 }

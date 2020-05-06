@@ -13,7 +13,7 @@ successMsg:boolean;
 
 formControls=this.customerService.form.controls;
 
-  constructor(private customerService:CustomerService) { }
+  constructor(public customerService:CustomerService) { }
 
   ngOnInit() {
     
@@ -30,7 +30,14 @@ formControls=this.customerService.form.controls;
       this.successMsg=true;
       setTimeout(() => this.successMsg=false, 3000);
       this.submitted=false;
-      this.formControls.value.reset();
+      // this.formControls.value.reset();
+      this.customerService.form.setValue({
+        $key: null,
+        fullName: '',
+        email: '',
+        mobile: '',
+        location: ''
+      });
     }
   }
 

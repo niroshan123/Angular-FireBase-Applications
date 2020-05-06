@@ -1,11 +1,11 @@
 <div class="row">
   <div class="col-md-5">
 
-<form [formGroup]="this.customerService.form" (ngSubmit)="onSubmit()">
-<input type="hidden" formControlName="$key">
+    <form [formGroup]="this.customerService.form" (ngSubmit)="onSubmit()">
+      <input type="hidden" formControlName="$key">
 
 <div class="form-group">
-  <label>Full Name</label>
+  <label  class="label">Full Name</label>
   <input formControlName="fullName" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.fullName.errors}">
 <div class="invalid-feedback" *ngIf="submitted && formControls.fullName.errors">
   <label *ngIf="formControls.fullName.errors">Name is Required</label>
@@ -14,7 +14,7 @@
 </div>
 
 <div class="form-group">
- <label>Email</label>
+ <label class="label">Email</label>
  <input formControlName="email" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.email.errors}">
  <div class="invalid-feedback" *ngIf="submitted && formControls.email.errors">
   <label *ngIf="formControls.email.errors.required">Email is Required</label>
@@ -23,7 +23,7 @@
 </div>
 
 <div class="form-group">
-  <label>Mobile</label>
+  <label class="label">Mobile</label>
   <input formControlName="mobile" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.mobile.errors}">
   <div class="invalid-feedback" *ngIf="submitted && formControls.mobile.errors">
     <label *ngIf="formControls.mobile.errors.required">Mobile is Required</label>
@@ -32,7 +32,7 @@
 </div>
 
 <div class="form-group">
-  <label>Location</label>
+  <label class="label">Location</label>
   <input formControlName="location" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.location.errors}">
   <div class="invalid-feedback" *ngIf="submitted && formControls.location.errors">
     This Field is required

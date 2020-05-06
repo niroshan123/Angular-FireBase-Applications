@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 import { observable } from 'rxjs';
 import { CustomerComponent } from './customer/customer.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
-import { ReactiveFormsModule} from '@angular/forms';
+import { ReactiveFormsModule,FormsModule} from '@angular/forms';
 import { CustomerService } from './shared/customer.service';
 
 @NgModule({
@@ -22,7 +22,8 @@ import { CustomerService } from './shared/customer.service';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [CustomerService],
   bootstrap: [AppComponent]

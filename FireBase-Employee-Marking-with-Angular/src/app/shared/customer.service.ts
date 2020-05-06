@@ -6,6 +6,9 @@ import { AngularFireDatabase,AngularFireList} from 'angularfire2/database';
   providedIn: 'root'
 })
 export class CustomerService {
+  deleteCustomer($key: any) {
+    this.customerList.remove($key);
+  }
 
   
 
@@ -52,4 +55,6 @@ this.customerList.push({
       location:customer.location
     })
   }
+
+  
 }
