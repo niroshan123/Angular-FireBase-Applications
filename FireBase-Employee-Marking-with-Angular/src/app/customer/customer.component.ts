@@ -21,6 +21,7 @@ formControls=this.customerService.form.controls;
 
   onSubmit(){
     this.submitted=true;
+    console.log(this.customerService.form.valid);
     if(this.customerService.form.valid){
       if(this.customerService.form.get('$key').value==null)
       this.customerService.insertCustomer(this.customerService.form.value);
