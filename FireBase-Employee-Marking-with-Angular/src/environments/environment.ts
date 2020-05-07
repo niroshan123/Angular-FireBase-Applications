@@ -5,14 +5,7 @@
 export const environment = {
   production: false,
   firebase:{
-    ApiKey : "AIzaSyC7FAphAiEg1k3eMaH3sLP5-m-zpJD1hxk" ,   
-    authDomain : "curd-5a6f4.firebaseapp.com" ,   
-    databaseURL : "https://curd-5a6f4.firebaseio.com" ,   
-    projectId : "curd-5a6f4" ,   
-    storageBucket : "curd-5a6f4.appspot.com" ,   
-    messagingSenderId : "934161130351" ,   
-    appId : "1: 934161130351: web: b493cc287329d6cc62fe9a" ,   
-    measurementId : "G-VBEPP3TKQ7"
+    
   }
 };
 
